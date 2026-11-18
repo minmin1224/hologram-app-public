@@ -58,6 +58,16 @@
   .feature-card .fi{font-size:26px;margin-bottom:10px;}
   .feature-card h3{margin:0 0 6px;font-size:15px;font-weight:700;}
   .feature-card p{margin:0;color:var(--sub);font-size:13px;line-height:1.6;}
+  .feature-link{display:inline-block;margin-top:10px;color:var(--accent);font-size:12px;font-weight:700;text-decoration:none;}
+  .feature-link:hover{text-decoration:underline;}
+
+  .install-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;}
+  .install-card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:20px;}
+  .install-card h3{margin:0 0 12px;font-size:15px;font-weight:700;color:var(--accent);}
+  .install-card ol{margin:0;padding-left:18px;color:var(--sub);font-size:13px;line-height:1.7;}
+  .install-card li{margin-bottom:6px;}
+  .install-card li:last-child{margin-bottom:0;}
+  .install-note{text-align:center;color:var(--sub);font-size:12px;margin:20px auto 0;max-width:520px;}
 
   .preview{display:flex;justify-content:center;}
   .pyramid-mock{width:260px;background:#000;border-radius:20px;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.18);position:relative;aspect-ratio:1/1;}
@@ -134,6 +144,12 @@
         <h3>自動で保存</h3>
         <p>読み込んだ画像や調整内容は端末内に自動保存され、次回開いたときも同じ状態から続けられます。</p>
       </div>
+      <div class="feature-card">
+        <div class="fi">📱</div>
+        <h3>ホーム画面に追加(PWA)</h3>
+        <p>スマホのホーム画面に追加すれば、アプリのように1タップで起動できます。</p>
+        <a class="feature-link" href="#install">追加のやり方を見る →</a>
+      </div>
     </div>
   </section>
 
@@ -165,6 +181,34 @@
       <li><span class="num">3</span><span class="txt"><b>ホログラム表示をタップ</b><span>画面全体に4面分の映像が表示されます</span></span></li>
       <li><span class="num">4</span><span class="txt"><b>リフレクターを置く</b><span>ピラミッド型リフレクターを画面の中央に乗せて、浮かび上がる映像を楽しみます</span></span></li>
     </ol>
+  </section>
+
+  <section id="install">
+    <div class="section-head">
+      <h2>ホーム画面に追加する</h2>
+      <p>インストールすれば、次回からアプリのように1タップで開けます</p>
+    </div>
+    <div class="install-grid">
+      <div class="install-card">
+        <h3>Android (Chrome)</h3>
+        <ol>
+          <li>スマホのChromeでアプリのURLを開く</li>
+          <li>右上の「⋮」メニューを開く</li>
+          <li>「アプリをインストール」または「ホーム画面に追加」をタップ</li>
+          <li>表示名を確認して「インストール」</li>
+        </ol>
+      </div>
+      <div class="install-card">
+        <h3>iPhone (Safari)</h3>
+        <ol>
+          <li>iPhoneのSafari(他のブラウザ不可)でアプリのURLを開く</li>
+          <li>共有アイコン(四角に上矢印)をタップ</li>
+          <li>「ホーム画面に追加」を選択</li>
+          <li>表示名を確認して右上の「追加」</li>
+        </ol>
+      </div>
+    </div>
+    <p class="install-note">インストールしなくても、ブラウザのままでも全ての機能を使えます。</p>
   </section>
 
   <section>

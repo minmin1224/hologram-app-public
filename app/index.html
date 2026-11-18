@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <title>3Dホログラムメーカー</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2563eb">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="ホログラム">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
 <style>
   :root{
     --bg:#f5f6f8;
@@ -819,6 +826,15 @@
     if (state.originalImage) drawPickCanvas();
   });
 })();
+</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch((err) => {
+      console.warn("Service worker registration failed:", err);
+    });
+  });
+}
 </script>
 </body>
 </html>
