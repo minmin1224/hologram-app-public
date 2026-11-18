@@ -168,6 +168,9 @@
       <button class="danger sm" id="clearBtn" disabled>削除</button>
     </div>
     <div class="btnRow" style="margin-top:8px;">
+      <button class="fileBtn ghost block" id="cameraBtn">カメラで撮影する<input type="file" accept="image/*" capture="environment" id="cameraInput"></button>
+    </div>
+    <div class="btnRow" style="margin-top:8px;">
       <button class="ghost block" id="qrBtn">QRコードから画像を取り込む</button>
     </div>
   </div>
@@ -408,14 +411,17 @@
     scheduleSave();
   }
 
-  fileInput.addEventListener("change", function(e){
-    var file = e.target.files && e.target.files[0];
+  function handlePickedFile(inputEl){
+    var file = inputEl.files && inputEl.files[0];
     if (!file) return;
     var reader = new FileReader();
     reader.onload = function(){ loadNewImage(reader.result); };
     reader.readAsDataURL(file);
-    fileInput.value = "";
-  });
+    inputEl.value = "";
+  }
+  fileInput.addEventListener("change", function(){ handlePickedFile(fileInput); });
+  var cameraInput = document.getElementById("cameraInput");
+  cameraInput.addEventListener("change", function(){ handlePickedFile(cameraInput); });
 
   // ---------- modal (confirm / alert) ----------
   var pendingConfirm = null;
