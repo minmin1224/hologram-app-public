@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://minmin1224.github.io/hologram-app-public/sitemap.xml
