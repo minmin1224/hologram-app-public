@@ -67,9 +67,11 @@
   #previewCross{position:absolute;inset:0;}
   @keyframes breathe{
     0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-4%);}
+    50%{transform:translateY(var(--breathe-amt,-6px));}
   }
-  .breatheOn{animation:breathe 4s ease-in-out infinite;}
+  #previewCross .spokeAnchor{--breathe-amt:calc(var(--img-w) * -0.08);}
+  #crossBox .spokeAnchor{--breathe-amt:calc(var(--stage-img-w) * -0.08);}
+  .breatheOn .spokeAnchor{animation:breathe 4s ease-in-out infinite;}
   .spokeAnchor{position:absolute;left:50%;bottom:0;width:0;height:0;}
   .spokeImg{
     position:absolute;left:0;bottom:0;
